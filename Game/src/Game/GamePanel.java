@@ -161,13 +161,13 @@ public class GamePanel extends JPanel implements ActionListener  {
 		
 		if (running) {
 			g.setColor(Color.red);
-			for(int i=0; i < GAME_HEIGHT/25; i++) {
-				g.drawLine(0, i*25, GAME_WIDTH, i*25);
-			}
-		
-			for(int i=0; i < GAME_WIDTH/25; i++) {
-				g.drawLine(i*25, 0, i*25, GAME_HEIGHT);
-			}
+//			for(int i=0; i < GAME_HEIGHT/25; i++) {
+//				g.drawLine(0, i*25, GAME_WIDTH, i*25);
+//			}
+//		
+//			for(int i=0; i < GAME_WIDTH/25; i++) {
+//				g.drawLine(i*25, 0, i*25, GAME_HEIGHT);
+//			}
 		
 			g.setColor(Color.red);
 			g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);

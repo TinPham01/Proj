@@ -27,8 +27,9 @@ public class Frame extends JFrame implements ActionListener {
 		
 		resetButton = new JButton();
 		resetButton.setText("Play Again?");
-		resetButton.setSize(100, 50);
-		resetButton.setLocation(380, 610);
+		resetButton.setSize(200, 50);
+		resetButton.setLocation(330, 610);
+		resetButton.setFont(new Font("Hi Bold",Font.BOLD, 20));
 		resetButton.addActionListener(this);
 		
 		blackPanel.setBackground(Color.black);
