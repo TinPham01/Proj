@@ -1,21 +1,21 @@
 package Game;
 
 import java.awt.*;
-import java.io.StreamCorruptedException;
-
+import java.awt.event.*;
 import javax.swing.*;
 
-public class Frame {
+public class Frame extends JFrame implements ActionListener {
 	JFrame frame;
 	private static final int window_width = 875;
 	private static final int window_height = 700;
 	GamePanel panel;
+	JButton resetButton;
 	
-	public static int getWidth() {
+	public int getWidth() {
 		return window_width;
 	}
 	
-	public static int getHeight() {
+	public int getHeight() {
 		return window_height;
 	}
 	
@@ -25,9 +25,16 @@ public class Frame {
 		panel = new GamePanel();
 		JPanel blackPanel = new JPanel();
 		
+		resetButton = new JButton();
+		resetButton.setText("Play Again?");
+		resetButton.setSize(100, 50);
+		resetButton.setLocation(380, 610);
+		resetButton.addActionListener(this);
+		
 		blackPanel.setBackground(Color.black);
 		blackPanel.setBounds(45, 45, 760, 560);
 
+		frame.add(resetButton);
 		frame.add(panel);
 		frame.add(blackPanel);
 		
@@ -39,6 +46,18 @@ public class Frame {
 		frame.setVisible(true);
 		frame.setResizable(false);
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource() == resetButton) {
+			   frame.remove(panel);
+			   panel = new GamePanel();
+			   frame.add(panel);
+			   panel.requestFocusInWindow();
+			   SwingUtilities.updateComponentTreeUI(frame);
+		}
 	}
 	
 }
